@@ -10,11 +10,18 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "main:app",
+                "fastapi_backend.main:app",
                 "--reload"
             ],
             "jinja": true,
-            "cwd": "${workspaceFolder}/fastapi_backend",
+        },
+        {
+            "name": "Run react",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000", // create-react-app's default port 3000
+            "webRoot": "${workspaceRoot}/src",
+            "preLaunchTask": "npm: start" // Add prelaunch Task npm: start (defined in tasks.json)
         }
     ]
 }
